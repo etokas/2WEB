@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="client"></div>
+    <button id="fill">Click Here !! </button>
+
+    <script>
+        var fill = document.getElementById("fill");
+
+        fill.addEventListener('click', function () {
+
+            var client = document.getElementById("client");
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "remote.html");
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState === 4) {
+                    if (xhr.status = 200) {
+                        client.innerHTML = (xhr.responseText)
+                    }
+                }
+            };
+            xhr.send(null);
+        });
+    </script>
+    
+</body>
+</html>
