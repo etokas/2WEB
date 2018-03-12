@@ -18,7 +18,7 @@
             xhr.open("GET", "remote.html");
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === 4) {
-                    if (xhr.status = 200) {
+                    if (xhr.status === 200) {
                         client.innerHTML = (xhr.responseText)
                     }
                 }

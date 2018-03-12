@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1.1</title>
+</head>
+<body>
+<h2>Which language do you prefer ?</h2>
+<button>HTML</button>
+<button>CSS</button>
+<button>Javascript</button>
+<button>PHP</button>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    $(function () {
+        $("button").on('click', function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: "GET",
+                url: "response.php?lang=" + $(this).text(),
+                success: function (data) {
+                    alert(data)
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
